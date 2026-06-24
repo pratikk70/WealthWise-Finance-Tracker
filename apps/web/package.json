@@ -1,5 +1,5 @@
 {
-  "name": "@wealthwise/web",
+  "name": "@finsight/web",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -33,7 +33,7 @@
     "@radix-ui/react-tooltip": "^1.1.0",
     "@tanstack/react-query": "^5.51.0",
     "@tanstack/react-table": "^8.19.0",
-    "@wealthwise/shared-types": "*",
+    "@finsight/shared-types": "*",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "cmdk": "^1.0.0",

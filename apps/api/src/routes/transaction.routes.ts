@@ -7,7 +7,7 @@ import {
   createTransactionSchema,
   updateTransactionSchema,
   transactionQuerySchema,
-} from "@wealthwise/shared-types";
+} from "@finsight/shared-types";
 
 const router = Router();
 

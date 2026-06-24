@@ -1,5 +1,5 @@
 {
-  "name": "@wealthwise/api",
+  "name": "@finsight/api",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
-    "@wealthwise/shared-types": "*",
+    "@finsight/shared-types": "*",
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
     "dotenv": "^16.4.0",

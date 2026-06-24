@@ -9,7 +9,7 @@ import {
   updateProfileSchema,
   forgotPasswordSchema,
   resetPasswordSchema,
-} from "@wealthwise/shared-types";
+} from "@finsight/shared-types";
 
 const router = Router();
 

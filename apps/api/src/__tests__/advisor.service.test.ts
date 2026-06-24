@@ -204,7 +204,7 @@ describe("advisor.service", () => {
       );
       expect(getGenerativeModelSpy).toHaveBeenCalledWith({
         model: result.model,
-        systemInstruction: expect.stringContaining("WealthWise Advisor"),
+        systemInstruction: expect.stringContaining("FinSight Advisor"),
       });
       expect(getGenerativeModelSpy.mock.calls[0]?.[0]).toMatchObject({
         systemInstruction: expect.stringContaining("You must return exactly one JSON object"),
@@ -214,7 +214,7 @@ describe("advisor.service", () => {
       });
       expect(getGenerativeModelSpy.mock.calls[0]?.[0]).toMatchObject({
         systemInstruction: expect.stringContaining(
-          "WealthWise dashboard navigation labels: Dashboard, Transactions, Categories, Budgets, Goals, Accounts, Recurring, Analytics, AI Advisor, Settings."
+          "FinSight dashboard navigation labels: Dashboard, Transactions, Categories, Budgets, Goals, Accounts, Recurring, Analytics, AI Advisor, Settings."
         ),
       });
       expect(getGenerativeModelSpy.mock.calls[0]?.[0]).toMatchObject({

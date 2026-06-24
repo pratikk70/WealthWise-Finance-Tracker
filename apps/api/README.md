@@ -1,6 +1,6 @@
-# @wealthwise/api
+# @finsight/api
 
-Express 4 REST API for WealthWise, a personal finance management application. This package is part of the [WealthWise monorepo](../../README.md) and provides all backend services: authentication, account management, transactions, budgets, goals, recurring rules, analytics, and CSV import.
+Express 4 REST API for FinSight, a personal finance management application. This package is part of the [FinSight monorepo](../../README.md) and provides all backend services: authentication, account management, transactions, budgets, goals, recurring rules, analytics, and CSV import.
 
 ---
 
@@ -53,7 +53,7 @@ Environment variables are validated at startup with Zod. The process exits immed
 npm run dev            # starts all packages (Turbo)
 
 # Or just the API
-npx turbo dev --filter=@wealthwise/api
+npx turbo dev --filter=@finsight/api
 ```
 
 ### Seeding Data
@@ -425,7 +425,7 @@ Each service module encapsulates business logic for one domain:
 
 ```bash
 # Run all API tests
-npx turbo test --filter=@wealthwise/api
+npx turbo test --filter=@finsight/api
 
 # Run in watch mode
 cd apps/api && npx vitest

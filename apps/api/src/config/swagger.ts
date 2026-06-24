@@ -5,10 +5,10 @@ const options: swaggerJsdoc.Options = {
   definition: {
     openapi: "3.0.0",
     info: {
-      title: "WealthWise API",
+      title: "FinSight API",
       version: "1.0.0",
       description:
-        "REST API for WealthWise personal finance management application. " +
+        "REST API for FinSight personal finance management application. " +
         "Manage accounts, transactions, budgets, goals, recurring rules, and analytics.\n\n" +
         "## Authentication\n" +
         "Most endpoints require a JWT Bearer token. Obtain one via `POST /auth/login`, " +
@@ -19,7 +19,7 @@ const options: swaggerJsdoc.Options = {
         "All errors return `{ success: false, error: { code, message, details? } }`. " +
         "Validation errors include a `details` map of field names to error message arrays.",
       contact: {
-        name: "WealthWise Team",
+        name: "FinSight Team",
       },
       license: {
         name: "Private",
@@ -339,7 +339,7 @@ export function getSwaggerHtml(specUrl: string): string {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WealthWise API Documentation</title>
+  <title>FinSight API Documentation</title>
   <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/72x72/1f4b0.png">
   <link rel="stylesheet" href="https://unpkg.com/swagger-ui-dist@5.18.2/swagger-ui.css">
   <style>

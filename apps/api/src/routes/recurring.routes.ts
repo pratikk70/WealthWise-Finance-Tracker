@@ -2,7 +2,7 @@ import { Router } from "express";
 import { validate } from "../middleware/validate";
 import { authenticate } from "../middleware/auth";
 import * as recurringController from "../controllers/recurring.controller";
-import { createRecurringSchema, updateRecurringSchema } from "@wealthwise/shared-types";
+import { createRecurringSchema, updateRecurringSchema } from "@finsight/shared-types";
 
 const router = Router();
 

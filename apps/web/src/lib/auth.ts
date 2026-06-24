@@ -4,7 +4,7 @@ import CredentialsProvider from "next-auth/providers/credentials";
 const API_URL = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:4000/api/v1";
 
 /**
- * NextAuth.js configuration for WealthWise.
+ * NextAuth.js configuration for FinSight.
  *
  * Uses a CredentialsProvider that authenticates against the Express backend.
  * The JWT callback stores the access/refresh tokens and user info.

@@ -5,10 +5,10 @@
   "version": "1.0.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pratikk70/WealthWise-Finance-Tracker.git"
+    "url": "git+https://github.com/pratikk70/FinSight-Finance-Tracker.git"
   },
   "bugs": {
-    "url": "https://github.com/pratikk70/WealthWise-Finance-Tracker/issues"
+    "url": "https://github.com/pratikk70/FinSight-Finance-Tracker/issues"
   },
   "workspaces": [
     "apps/*",

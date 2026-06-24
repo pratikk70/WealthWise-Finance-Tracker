@@ -11,7 +11,7 @@ async function startDev() {
 
   const mongod = await MongoMemoryServer.create({
     instance: {
-      dbName: "wealthwise",
+      dbName: "finsight",
     },
   });
 

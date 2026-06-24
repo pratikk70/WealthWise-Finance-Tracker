@@ -2,7 +2,7 @@ import { Router } from "express";
 import { validate } from "../middleware/validate";
 import { authenticate } from "../middleware/auth";
 import * as accountController from "../controllers/account.controller";
-import { createAccountSchema, updateAccountSchema } from "@wealthwise/shared-types";
+import { createAccountSchema, updateAccountSchema } from "@finsight/shared-types";
 
 const router = Router();
 

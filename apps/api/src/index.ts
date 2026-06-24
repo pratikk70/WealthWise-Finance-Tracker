@@ -13,7 +13,7 @@ async function main() {
 
     // Start the Express server
     const server = app.listen(env.API_PORT, () => {
-      console.log(`WealthWise API server running on http://localhost:${env.API_PORT}`);
+      console.log(`FinSight API server running on http://localhost:${env.API_PORT}`);
       console.log(`API docs available at http://localhost:${env.API_PORT}/api/docs`);
       console.log(`Environment: ${env.NODE_ENV}`);
     });

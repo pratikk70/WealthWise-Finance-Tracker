@@ -1,4 +1,4 @@
-# WealthWise - Personal Finance Manager
+# FinSight - Personal Finance Manager
 
 [![Node.js](https://img.shields.io/badge/Node.js-18-339933?logo=nodedotjs&logoColor=white)](https://nodejs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.5-3178c6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
@@ -56,7 +56,7 @@
 
 A full-stack personal finance application built with a **Turborepo monorepo**, featuring an **Express REST API**, a **Next.js 14** frontend, and **shared Zod schemas** for end-to-end type safety. Track accounts, transactions, categories, budgets, goals, recurring bills, and analytics with a responsive interface, CSV import, and polished dashboard workflows.
 
-WealthWise also features an **MCP Server** exposing 43 financial tools and 6 resources, a **Context Engineering** service/package for graph-based financial context assembly, and an **Agentic AI** service with 4 specialized Claude-powered financial advisors. The project includes comprehensive testing with **Vitest** and an interactive **Swagger UI** for API exploration. It is containerized with **Docker/Podman** and ready for production deployment with **Nginx**, **Kubernetes**, and cloud platforms like **AWS**, **Azure**, and **GCP**.
+FinSight also features an **MCP Server** exposing 43 financial tools and 6 resources, a **Context Engineering** service/package for graph-based financial context assembly, and an **Agentic AI** service with 4 specialized Claude-powered financial advisors. The project includes comprehensive testing with **Vitest** and an interactive **Swagger UI** for API exploration. It is containerized with **Docker/Podman** and ready for production deployment with **Nginx**, **Kubernetes**, and cloud platforms like **AWS**, **Azure**, and **GCP**.
 
 ---
 
@@ -207,15 +207,15 @@ graph TB
 - **4 specialist AI agents** - financial advisor, anomaly detector, budget optimizer, and forecaster, orchestrated by an intent classifier
 
 > [!NOTE]
-> The frontend is deployed on Vercel at: **[https://wealthwisefinancial.vercel.app/](https://wealthwisefinancial.vercel.app/).** You can register a new account or use the following demo credentials to explore the app:
+> The frontend is deployed on Vercel at: **[https://finsightfinancial.vercel.app/](https://finsightfinancial.vercel.app/).** You can register a new account or use the following demo credentials to explore the app:
 > ```
-> Email: demo@wealthwise.app
+> Email: demo@finsight.app
 > Password: Demo1234!
 > ```
 > Or, create your own account to test the registration flow and see how the app works with an empty dataset.
 
 > [!TIP]
-> The backend is also fully deployed live, accessible at: [https://wealthwise-backend-api.vercel.app/](https://wealthwise-backend-api.vercel.app/). You can explore the API documentation at [https://wealthwise-backend-api.vercel.app/api/docs](https://wealthwise-backend-api.vercel.app/api/docs) and use the demo credentials above to authenticate and test the endpoints.
+> The backend is also fully deployed live, accessible at: [https://finsight-backend-api.vercel.app/](https://finsight-backend-api.vercel.app/). You can explore the API documentation at [https://finsight-backend-api.vercel.app/api/docs](https://finsight-backend-api.vercel.app/api/docs) and use the demo credentials above to authenticate and test the endpoints.
 
 ---
 
@@ -292,7 +292,7 @@ graph TB
 ## Project Structure
 
 ```
-wealthwise/
+finsight/
 ├── apps/
 │   ├── api/                    # Express REST API
 │   │   ├── src/
@@ -374,7 +374,7 @@ wealthwise/
 │
 ├── nginx/                     # Production reverse proxy config
 ├── helm/                      # Helm chart (alternative to Kustomize)
-│   └── wealthwise/            # Umbrella chart with per-env values files
+│   └── finsight/            # Umbrella chart with per-env values files
 ├── k8s/                       # Kubernetes manifests (Kustomize overlays)
 │   ├── base/                  # Base resources (deployments, services, ingress, etc.)
 │   └── overlays/              # dev, staging, production overrides
@@ -407,8 +407,8 @@ wealthwise/
 ### 1. Clone and install
 
 ```bash
-git clone https://github.com/hoangsonww/WealthWise-Finance-Tracker.git
-cd WealthWise-Finance-Tracker
+git clone https://github.com/hoangsonww/FinSight-Finance-Tracker.git
+cd FinSight-Finance-Tracker
 npm install
 ```
 
@@ -422,7 +422,7 @@ Edit `.env` with your values:
 
 ```env
 # Database
-MONGODB_URI=mongodb://localhost:27017/wealthwise
+MONGODB_URI=mongodb://localhost:27017/finsight
 
 # Auth - generate with: openssl rand -base64 32
 JWT_SECRET=your-jwt-secret-min-32-chars
@@ -516,12 +516,12 @@ This starts all services in parallel via Turborepo:
 | `npm run format:check` | Check formatting without writing |
 | `npm run db:seed` | Seed default categories |
 | `npm run clean` | Remove build artifacts and caches |
-| `npx turbo test --filter=@wealthwise/mcp` | Run MCP server tests (62 tests) |
-| `npx turbo test --filter=@wealthwise/agentic-ai` | Run agentic AI tests (31 tests) |
-| `npx turbo test --filter=@wealthwise/context-engineering` | Run context-engineering tests |
-| `npx turbo build --filter=@wealthwise/mcp` | Build MCP server |
-| `npx turbo build --filter=@wealthwise/agentic-ai` | Build agentic AI service |
-| `npx turbo build --filter=@wealthwise/context-engineering` | Build context-engineering package |
+| `npx turbo test --filter=@finsight/mcp` | Run MCP server tests (62 tests) |
+| `npx turbo test --filter=@finsight/agentic-ai` | Run agentic AI tests (31 tests) |
+| `npx turbo test --filter=@finsight/context-engineering` | Run context-engineering tests |
+| `npx turbo build --filter=@finsight/mcp` | Build MCP server |
+| `npx turbo build --filter=@finsight/agentic-ai` | Build agentic AI service |
+| `npx turbo build --filter=@finsight/context-engineering` | Build context-engineering package |
 
 ---
 
@@ -543,10 +543,10 @@ The project has **498 tests** across all packages:
 npm run test
 
 # Run tests for a specific package
-npx turbo test --filter=@wealthwise/api
-npx turbo test --filter=@wealthwise/web
-npx turbo test --filter=@wealthwise/shared-types
-npx turbo test --filter=@wealthwise/context-engineering
+npx turbo test --filter=@finsight/api
+npx turbo test --filter=@finsight/web
+npx turbo test --filter=@finsight/shared-types
+npx turbo test --filter=@finsight/context-engineering
 ```
 
 **API tests** use an in-memory MongoDB instance - no external database required. They cover all services, middleware, utility classes, and validation logic.
@@ -677,7 +677,7 @@ sequenceDiagram
 
 ## Docker Deployment
 
-WealthWise is fully containerized and includes compose files for both development and production environments. The production setup uses multi-stage builds for optimized images and includes an Nginx reverse proxy configuration. Both Docker and Podman are supported with dedicated compose files and Containerfiles.
+FinSight is fully containerized and includes compose files for both development and production environments. The production setup uses multi-stage builds for optimized images and includes an Nginx reverse proxy configuration. Both Docker and Podman are supported with dedicated compose files and Containerfiles.
 
 Additionally, the project includes Kubernetes manifests and Helm charts for orchestration in cloud environments, as well as Terraform modules for infrastructure provisioning across AWS, Azure, GCP, and Oracle Cloud.
 
@@ -746,7 +746,7 @@ graph TD
 
 ## MCP Server
 
-The MCP (Model Context Protocol) server exposes WealthWise's financial data as **43 tools** and **6 resources** for consumption by AI agents and LLM-powered applications. It supports both **SSE** (Server-Sent Events) and **stdio** transports.
+The MCP (Model Context Protocol) server exposes FinSight's financial data as **43 tools** and **6 resources** for consumption by AI agents and LLM-powered applications. It supports both **SSE** (Server-Sent Events) and **stdio** transports.
 
 - **Port:** 5100
 - **Tools:** 43 tools across 8 modules (accounts, transactions, budgets, goals, categories, recurring, analytics, context)
@@ -759,7 +759,7 @@ For full details on tool definitions, resource URIs, transport configuration, an
 
 ## Context Engineering
 
-The `@wealthwise/context-engineering` package adds a dedicated context layer between raw finance data and AI behavior.
+The `@finsight/context-engineering` package adds a dedicated context layer between raw finance data and AI behavior.
 
 - **Port:** 5300
 - **Core primitives:** `KnowledgeGraph`, `GraphTraversal`, `GraphQueryEngine`, `KnowledgeBase`, `ContextRetriever`, `ContextEngine`
@@ -811,7 +811,7 @@ For deep implementation details (context contracts, integration sequences, cache
 
 ## Cloud Deployment & Infrastructure
 
-WealthWise includes production-grade infrastructure-as-code for four major cloud providers, plus cloud-agnostic Kubernetes manifests and Terraform modules.
+FinSight includes production-grade infrastructure-as-code for four major cloud providers, plus cloud-agnostic Kubernetes manifests and Terraform modules.
 
 ### Hardened Production Docker
 
@@ -859,20 +859,20 @@ An alternative to Kustomize for teams that standardize on Helm:
 
 ```bash
 # Dev (single replica, relaxed policies)
-helm install wealthwise ./helm/wealthwise \
-  -f ./helm/wealthwise/values-dev.yaml \
+helm install finsight ./helm/finsight \
+  -f ./helm/finsight/values-dev.yaml \
   --set secrets.jwtSecret=changeme \
   --set secrets.jwtRefreshSecret=changeme \
   --set secrets.nextauthSecret=changeme \
-  --set secrets.mongodbUri=mongodb://localhost:27017/wealthwise
+  --set secrets.mongodbUri=mongodb://localhost:27017/finsight
 
 # Production (3 replicas, full security)
-helm install wealthwise ./helm/wealthwise \
-  -f ./helm/wealthwise/values-production.yaml \
+helm install finsight ./helm/finsight \
+  -f ./helm/finsight/values-production.yaml \
   --set existingSecret=my-sealed-secret
 ```
 
-Single umbrella chart with inline templates for both API and web workloads. Supports `existingSecret` for Sealed Secrets / External Secrets Operator, conditional HPA/PDB/NetworkPolicies, and per-environment values files (dev, staging, production). See `helm/wealthwise/README.md` for full values reference.
+Single umbrella chart with inline templates for both API and web workloads. Supports `existingSecret` for Sealed Secrets / External Secrets Operator, conditional HPA/PDB/NetworkPolicies, and per-environment values files (dev, staging, production). See `helm/finsight/README.md` for full values reference.
 
 ### Terraform Modules
 
@@ -910,7 +910,7 @@ Centralized logs, metrics, and traces via **Coralogix** + **OpenTelemetry Collec
 - **Terraform**: 7 alert rules, 3 TCO log tiering policies, 4 parsing rule groups, and a 5-section dashboard provisioned via the `coralogix/coralogix` Terraform provider
 - **Nginx**: Structured JSON access logs (`json_combined` format) for automatic parsing
 
-Config: `coralogix/`, `helm/wealthwise/values.yaml` → `coralogix:`, `k8s/base/otel-collector-*`, `terraform/modules/coralogix/`
+Config: `coralogix/`, `helm/finsight/values.yaml` → `coralogix:`, `k8s/base/otel-collector-*`, `terraform/modules/coralogix/`
 
 ### Production Nginx
 
@@ -942,7 +942,7 @@ We also provide CI/CD workflows for automated testing, building, and deployment 
 
 ## Test Coverage
 
-WealthWise has a comprehensive test suite with **498 tests** across all packages, ensuring robust validation of functionality, data integrity, and edge cases.
+FinSight has a comprehensive test suite with **498 tests** across all packages, ensuring robust validation of functionality, data integrity, and edge cases.
 
 ```mermaid
 pie title 498 Tests Across 6 Packages
@@ -958,7 +958,7 @@ pie title 498 Tests Across 6 Packages
 
 ## Agentic Coding Flywheel
 
-WealthWise integrates the [Agentic Coding Flywheel](https://agent-flywheel.com/) methodology for multi-agent development. This enables coordinated swarms of AI coding agents (Claude Code, Codex, Gemini-CLI) to work concurrently on the same codebase using structured task management and real-time coordination.
+FinSight integrates the [Agentic Coding Flywheel](https://agent-flywheel.com/) methodology for multi-agent development. This enables coordinated swarms of AI coding agents (Claude Code, Codex, Gemini-CLI) to work concurrently on the same codebase using structured task management and real-time coordination.
 
 ### Core Components
 
@@ -1077,8 +1077,8 @@ This project is licensed under [MIT License](LICENSE).
 
 ## Creator
 
-WealthWise was created by [**Son Nguyen**](https://sonnguyenhoang.com) - a software engineer passionate about building impactful projects that combine my love for coding and finance. With over 5 years of experience in full-stack development, I designed WealthWise to be a comprehensive personal finance tracker that leverages modern technologies and AI capabilities to help users take control of their financial lives. You can find me on [GitHub](https://github.com/hoangsonww) and [LinkedIn](https://www.linkedin.com/in/hoangsonw/). If you have any questions, feedback, or want to connect, feel free to reach out!
+FinSight was created by [**Son Nguyen**](https://sonnguyenhoang.com) - a software engineer passionate about building impactful projects that combine my love for coding and finance. With over 5 years of experience in full-stack development, I designed FinSight to be a comprehensive personal finance tracker that leverages modern technologies and AI capabilities to help users take control of their financial lives. You can find me on [GitHub](https://github.com/hoangsonww) and [LinkedIn](https://www.linkedin.com/in/hoangsonw/). If you have any questions, feedback, or want to connect, feel free to reach out!
 
 ---
 
-Thank you for exploring WealthWise! I hope this project serves as a valuable resource and inspiration for your own development journey. Happy coding and happy financial tracking! 🚀💰
+Thank you for exploring FinSight! I hope this project serves as a valuable resource and inspiration for your own development journey. Happy coding and happy financial tracking! 🚀💰

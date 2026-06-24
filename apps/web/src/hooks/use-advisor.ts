@@ -3,11 +3,7 @@
 import { useMutation } from "@tanstack/react-query";
 import { toast } from "sonner";
 import { apiClient } from "@/lib/api-client";
-import type {
-  AdvisorChatRequest,
-  AdvisorChatResponse,
-  ApiResponse,
-} from "@wealthwise/shared-types";
+import type { AdvisorChatRequest, AdvisorChatResponse, ApiResponse } from "@finsight/shared-types";
 
 export function useAdvisorChat() {
   return useMutation({

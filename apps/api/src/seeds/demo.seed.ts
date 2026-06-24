@@ -10,7 +10,7 @@ import { RecurringRule } from "../models/recurring-rule.model";
 import { seedDefaultCategories } from "./categories.seed";
 
 // ── Demo credentials ────────────────────────────────────────────────────────
-const DEMO_EMAIL = "demo@wealthwise.app";
+const DEMO_EMAIL = "demo@finsight.app";
 const DEMO_PASSWORD = "Demo1234!";
 const DEMO_NAME = "Alex Morgan";
 

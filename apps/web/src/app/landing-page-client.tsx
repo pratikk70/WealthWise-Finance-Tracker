@@ -216,7 +216,7 @@ const TESTIMONIALS = [
     avatar: "SC",
     color: "bg-indigo-500",
     quote:
-      "WealthWise completely changed how I think about money. I went from guessing where my paycheck went to actually saving 30% every month.",
+      "FinSight completely changed how I think about money. I went from guessing where my paycheck went to actually saving 30% every month.",
     stars: 5,
   },
   {
@@ -270,7 +270,7 @@ export default function LandingPage() {
                 <Wallet className="h-5 w-5" />
               </div>
               <span className="whitespace-nowrap text-lg font-bold tracking-tight sm:text-xl">
-                WealthWise
+                FinSight
               </span>
             </div>
 
@@ -421,7 +421,7 @@ export default function LandingPage() {
             <Reveal delay={200}>
               <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-muted-foreground sm:text-xl">
                 Track every dollar, build smarter budgets, and reach your savings goals faster.
-                WealthWise gives you the clarity and tools to master your money - beautifully.
+                FinSight gives you the clarity and tools to master your money - beautifully.
               </p>
             </Reveal>
 
@@ -651,8 +651,7 @@ export default function LandingPage() {
                 Up and running in <span className="text-gradient">minutes</span>
               </h2>
               <p className="mt-5 text-lg text-muted-foreground">
-                Getting started with WealthWise is effortless. Four simple steps to financial
-                clarity.
+                Getting started with FinSight is effortless. Four simple steps to financial clarity.
               </p>
             </div>
           </Reveal>
@@ -926,7 +925,7 @@ export default function LandingPage() {
               </h2>
               <p className="mt-4 text-lg text-muted-foreground">
                 Join thousands of people who have already transformed their financial lives with
-                WealthWise. Start your journey today.
+                FinSight. Start your journey today.
               </p>
               <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
                 <Link
@@ -955,7 +954,7 @@ export default function LandingPage() {
                 <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-primary-foreground">
                   <Wallet className="h-4 w-4" />
                 </div>
-                <span className="text-lg font-bold">WealthWise</span>
+                <span className="text-lg font-bold">FinSight</span>
               </div>
               <p className="text-sm leading-relaxed text-muted-foreground">
                 Smart personal finance management for everyone. Track, budget, and grow your wealth.
@@ -1028,19 +1027,19 @@ export default function LandingPage() {
             <div className="space-y-3">
               <h4 className="text-sm font-semibold">Connect</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>
+                {/* <li>
                   <a
-                    href="https://sonnguyenhoang.com"
+                    href="https://pratik.com"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="underline decoration-muted-foreground/40 underline-offset-2 transition-colors hover:text-foreground hover:decoration-foreground"
                   >
-                    sonnguyenhoang.com
+                    pratik.com
                   </a>
-                </li>
+                </li> */}
                 <li>
                   <a
-                    href="https://github.com/hoangsonww"
+                    href="https://github.com/pratikk70"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="underline decoration-muted-foreground/40 underline-offset-2 transition-colors hover:text-foreground hover:decoration-foreground"
@@ -1049,7 +1048,7 @@ export default function LandingPage() {
                   </a>
                 </li>
                 <li>
-                  <span className="transition-colors">hoangson091104@gmail.com</span>
+                  <span className="transition-colors">pratikparkale05@gmail.com</span>
                 </li>
               </ul>
             </div>
