@@ -1,14 +1,12 @@
 import cors from "cors";
+import { env } from "../config/env"; // Import your newly updated env variables
 
 /**
  * CORS configuration.
- * Reflects any request origin so the API accepts all callers, including
- * credentialed browser requests.
+ * Strictly accepts requests ONLY from the configured FRONTEND_URL.
  */
 export const corsMiddleware = cors({
-  origin: (_origin, callback) => {
-    callback(null, true);
-  },
+  origin: env.FRONTEND_URL, // Automatically uses Vercel in prod, and localhost locally!
   methods: ["GET", "POST", "PATCH", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true,

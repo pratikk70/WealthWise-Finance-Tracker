@@ -12,7 +12,13 @@ const envSchema = z.object({
   GEMINI_MODEL: z.string().min(1).default("gemini-2.5-flash"),
   GEMINI_MODEL_ALLOWLIST: z.string().optional(),
   GEMINI_ALLOW_PRO_MODELS: z.enum(["true", "false"]).optional().default("false"),
-  API_PORT: z.coerce.number().int().positive().default(4000),
+  
+  // 1. Added FRONTEND_URL to safely handle Vercel CORS connections
+  FRONTEND_URL: z.string().default("http://localhost:3000"),
+  
+  // 2. Updated API_PORT to check for Render's injected PORT first
+  API_PORT: z.coerce.number().int().positive().default(Number(process.env.PORT) || 4000),
+  
   NODE_ENV: z.enum(["development", "production", "test"]).default("development"),
 });
 
