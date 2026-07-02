@@ -36,104 +36,13 @@ npm run dev
 
 ## Folder Structure
 finsight
-
 ├── apps
-
-|  ├── api
-
-|  |  ├── package.json
-
-|  |  ├── README.md
-
-|  |  ├── src
-
-|  |  ├── tsconfig.json
-
-|  |  └── vitest.config.ts
-
-|  └── web
-
-|     ├── next-env.d.ts
-
-|     ├── next.config.js
-
-|     ├── package.json
-
-|     ├── postcss.config.js
-
-|     ├── public
-
-|     ├── README.md
-
-|     ├── src
-
-|     ├── tailwind.config.ts
-
-|     ├── tsconfig.json
-
-|     ├── tsconfig.tsbuildinfo
-
-|     └── vitest.config.ts
-
-├── images
-
-|  ├── accounts.png
-
-|  ├── ai.png
-
-|  ├── analytics.png
-
-|  ├── budgets.png
-
-|  ├── categories.png
-
-|  ├── dashboard.png
-
-|  ├── github-actions.png
-
-|  ├── goals.png
-
-|  ├── landing.png
-
-|  ├── recurring.png
-
-|  ├── settings.png
-
-|  ├── swagger.png
-
-|  └── transactions.png
-
-├── package-lock.json
-
-├── package.json
-
+│   ├── api              # Express server, MongoDB models, API routes
+│   └── web              # Next.js frontend, React components, Tailwind
 ├── packages
-
-|  └── shared-types
-
-|     ├── package.json
-
-|     ├── README.md
-
-|     ├── src
-
-|     ├── tsconfig.json
-
-|     └── vitest.config.ts
-
-├── README.md
-
-├── scripts
-
-|  ├── generate-secrets.sh
-
-|  └── health-check.sh
-
-├── test-transactions.csv
-
-├── tsconfig.json
-
-└── turbo.json
+│   └── shared-types     # Zod schemas & TS types shared across client/server
+├── scripts              # Utility bash scripts for setup & health checks
+└── turbo.json           # Turborepo pipeline configuration
 
 ## Creator
 FinSight was refined and deployed by Pratik Tanaji Parkale. 
