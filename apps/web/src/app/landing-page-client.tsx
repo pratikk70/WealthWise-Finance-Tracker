@@ -77,52 +77,52 @@ function Reveal({
 }
 
 // ─── Animated counter ───────────────────────────────────────────────────────
-function Counter({ target, suffix = "" }: { target: number; suffix?: string }) {
-  const ref = useRef<HTMLSpanElement>(null);
-  const [value, setValue] = useState(0);
-  const [started, setStarted] = useState(false);
+// function Counter({ target, suffix = "" }: { target: number; suffix?: string }) {
+//   const ref = useRef<HTMLSpanElement>(null);
+//   const [value, setValue] = useState(0);
+//   const [started, setStarted] = useState(false);
 
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting && !started) {
-          setStarted(true);
-          observer.unobserve(el);
-        }
-      },
-      { threshold: 0.5 }
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, [started]);
+//   useEffect(() => {
+//     const el = ref.current;
+//     if (!el) return;
+//     const observer = new IntersectionObserver(
+//       ([entry]) => {
+//         if (entry.isIntersecting && !started) {
+//           setStarted(true);
+//           observer.unobserve(el);
+//         }
+//       },
+//       { threshold: 0.5 }
+//     );
+//     observer.observe(el);
+//     return () => observer.disconnect();
+//   }, [started]);
 
-  useEffect(() => {
-    if (!started) return;
-    const duration = 2000;
-    const steps = 60;
-    const increment = target / steps;
-    let current = 0;
-    const timer = setInterval(() => {
-      current += increment;
-      if (current >= target) {
-        setValue(target);
-        clearInterval(timer);
-      } else {
-        setValue(Math.floor(current));
-      }
-    }, duration / steps);
-    return () => clearInterval(timer);
-  }, [started, target]);
+//   useEffect(() => {
+//     if (!started) return;
+//     const duration = 2000;
+//     const steps = 60;
+//     const increment = target / steps;
+//     let current = 0;
+//     const timer = setInterval(() => {
+//       current += increment;
+//       if (current >= target) {
+//         setValue(target);
+//         clearInterval(timer);
+//       } else {
+//         setValue(Math.floor(current));
+//       }
+//     }, duration / steps);
+//     return () => clearInterval(timer);
+//   }, [started, target]);
 
-  return (
-    <span ref={ref}>
-      {value.toLocaleString()}
-      {suffix}
-    </span>
-  );
-}
+//   return (
+//     <span ref={ref}>
+//       {value.toLocaleString()}
+//       {suffix}
+//     </span>
+//   );
+// }
 
 // ─── Data ───────────────────────────────────────────────────────────────────
 const FEATURES = [
@@ -209,49 +209,49 @@ const STEPS = [
   },
 ];
 
-const TESTIMONIALS = [
-  {
-    name: "Sarah Chen",
-    role: "Product Designer",
-    avatar: "SC",
-    color: "bg-indigo-500",
-    quote:
-      "FinSight completely changed how I think about money. I went from guessing where my paycheck went to actually saving 30% every month.",
-    stars: 5,
-  },
-  {
-    name: "Marcus Johnson",
-    role: "Software Engineer",
-    avatar: "MJ",
-    color: "bg-emerald-500",
-    quote:
-      "The analytics dashboard is incredible. Being able to see spending trends over months helped me cut unnecessary subscriptions and save $200/month.",
-    stars: 5,
-  },
-  {
-    name: "Emily Rodriguez",
-    role: "Freelance Writer",
-    avatar: "ER",
-    color: "bg-violet-500",
-    quote:
-      "As a freelancer with irregular income, the budget alerts are a lifesaver. I finally feel in control of my finances for the first time.",
-    stars: 5,
-  },
-];
+// const TESTIMONIALS = [
+//   {
+//     name: "Raj",
+//     role: "Product Designer",
+//     avatar: "SC",
+//     color: "bg-indigo-500",
+//     quote:
+//       "FinSight completely changed how I think about money. I went from guessing where my paycheck went to actually saving 30% every month.",
+//     stars: 5,
+//   },
+//   {
+//     name: "Sahil",
+//     role: "Software Engineer",
+//     avatar: "MJ",
+//     color: "bg-emerald-500",
+//     quote:
+//       "The analytics dashboard is incredible. Being able to see spending trends over months helped me cut unnecessary subscriptions and save $200/month.",
+//     stars: 5,
+//   },
+//   {
+//     name: "Tejas",
+//     role: "Freelance Writer",
+//     avatar: "ER",
+//     color: "bg-violet-500",
+//     quote:
+//       "As a freelancer with irregular income, the budget alerts are a lifesaver. I finally feel in control of my finances for the first time.",
+//     stars: 5,
+//   },
+// ];
 
-const STATS = [
-  { value: 50, suffix: "K+", label: "Active Users" },
-  { value: 2.4, suffix: "B+", label: "Dollars Tracked", prefix: "$" },
-  { value: 1.2, suffix: "M+", label: "Transactions Logged" },
-  { value: 99.9, suffix: "%", label: "Uptime" },
-];
+// const STATS = [
+//   { value: 50, suffix: "K+", label: "Active Users" },
+//   { value: 2.4, suffix: "B+", label: "Dollars Tracked", prefix: "$" },
+//   { value: 1.2, suffix: "M+", label: "Transactions Logged" },
+//   { value: 99.9, suffix: "%", label: "Uptime" },
+// ];
 
-const TRUST_ITEMS = [
-  { icon: Lock, label: "Bank-Grade Encryption" },
-  { icon: Shield, label: "SOC 2 Compliant" },
-  { icon: Globe, label: "GDPR Ready" },
-  { icon: ShieldCheck, label: "No Data Selling" },
-];
+// const TRUST_ITEMS = [
+//   { icon: Lock, label: "Bank-Grade Encryption" },
+//   { icon: Shield, label: "SOC 2 Compliant" },
+//   { icon: Globe, label: "GDPR Ready" },
+//   { icon: ShieldCheck, label: "No Data Selling" },
+// ];
 
 // ─── Page ───────────────────────────────────────────────────────────────────
 export default function LandingPage() {
@@ -287,12 +287,12 @@ export default function LandingPage() {
               >
                 How It Works
               </a>
-              <a
+              {/* <a
                 href="#testimonials"
                 className="text-sm text-muted-foreground transition-colors hover:text-foreground"
               >
                 Testimonials
-              </a>
+              </a> */}
             </div>
 
             <div className="flex shrink-0 items-center gap-1.5 sm:gap-2">
@@ -573,10 +573,10 @@ export default function LandingPage() {
       </section>
 
       {/* ── Trust Bar ──────────────────────────────────────────────────── */}
-      <section className="overflow-hidden border-y border-border bg-muted/20 py-6">
-        <div className="relative">
+      {/* <section className="overflow-hidden border-y border-border bg-muted/20 py-6">
+        <div className="relative"> */}
           {/* Fade edges */}
-          <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-20 bg-gradient-to-r from-background/80 to-transparent" />
+          {/* <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-20 bg-gradient-to-r from-background/80 to-transparent" />
           <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-20 bg-gradient-to-l from-background/80 to-transparent" />
           <div className="trust-carousel flex gap-12">
             {[...TRUST_ITEMS, ...TRUST_ITEMS, ...TRUST_ITEMS].map((item, i) => (
@@ -594,7 +594,7 @@ export default function LandingPage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* ── Features ───────────────────────────────────────────────────── */}
       <section id="features" className="relative py-24 sm:py-32">
@@ -698,7 +698,7 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* ── Stats ──────────────────────────────────────────────────────── */}
+      {/* ── Stats ────────────────────────────────────────────────────────
       <section className="relative py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <Reveal>
@@ -726,10 +726,10 @@ export default function LandingPage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* ── Testimonials ───────────────────────────────────────────────── */}
-      <section id="testimonials" className="relative bg-muted/30 py-24 sm:py-32">
+      {/* <section id="testimonials" className="relative bg-muted/30 py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <Reveal>
             <div className="mx-auto max-w-2xl text-center">
@@ -740,26 +740,26 @@ export default function LandingPage() {
                 Loved by people who <span className="text-gradient">love their money</span>
               </h2>
             </div>
-          </Reveal>
+          </Reveal> */}
 
-          <div className="mx-auto mt-16 grid max-w-6xl gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {/* <div className="mx-auto mt-16 grid max-w-6xl gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {TESTIMONIALS.map((t, i) => (
               <Reveal key={t.name} delay={i * 120}>
-                <div className="group relative flex h-full flex-col rounded-2xl border border-border bg-card p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+                <div className="group relative flex h-full flex-col rounded-2xl border border-border bg-card p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"> */}
                   {/* Stars */}
-                  <div className="mb-4 flex gap-0.5">
+                  {/* <div className="mb-4 flex gap-0.5">
                     {Array.from({ length: t.stars }).map((_, j) => (
                       <Star key={j} className="h-4 w-4 fill-amber-400 text-amber-400" />
                     ))}
-                  </div>
+                  </div> */}
 
                   {/* Quote */}
-                  <blockquote className="flex-1 text-sm leading-relaxed text-muted-foreground">
+                  {/* <blockquote className="flex-1 text-sm leading-relaxed text-muted-foreground">
                     &ldquo;{t.quote}&rdquo;
-                  </blockquote>
+                  </blockquote> */}
 
                   {/* Author */}
-                  <div className="mt-6 flex items-center gap-3 border-t border-border pt-5">
+                  {/* <div className="mt-6 flex items-center gap-3 border-t border-border pt-5">
                     <div
                       className={`flex h-10 w-10 items-center justify-center rounded-full ${t.color} text-sm font-bold text-white`}
                     >
