@@ -34,6 +34,107 @@ npm run dev
 - Validation: Zod (Shared)
 - Auth: NextAuth.js (Client) / JWT (Server)
 
+## Folder Structure
+finsight
+
+├── apps
+
+|  ├── api
+
+|  |  ├── package.json
+
+|  |  ├── README.md
+
+|  |  ├── src
+
+|  |  ├── tsconfig.json
+
+|  |  └── vitest.config.ts
+
+|  └── web
+
+|     ├── next-env.d.ts
+
+|     ├── next.config.js
+
+|     ├── package.json
+
+|     ├── postcss.config.js
+
+|     ├── public
+
+|     ├── README.md
+
+|     ├── src
+
+|     ├── tailwind.config.ts
+
+|     ├── tsconfig.json
+
+|     ├── tsconfig.tsbuildinfo
+
+|     └── vitest.config.ts
+
+├── images
+
+|  ├── accounts.png
+
+|  ├── ai.png
+
+|  ├── analytics.png
+
+|  ├── budgets.png
+
+|  ├── categories.png
+
+|  ├── dashboard.png
+
+|  ├── github-actions.png
+
+|  ├── goals.png
+
+|  ├── landing.png
+
+|  ├── recurring.png
+
+|  ├── settings.png
+
+|  ├── swagger.png
+
+|  └── transactions.png
+
+├── package-lock.json
+
+├── package.json
+
+├── packages
+
+|  └── shared-types
+
+|     ├── package.json
+
+|     ├── README.md
+
+|     ├── src
+
+|     ├── tsconfig.json
+
+|     └── vitest.config.ts
+
+├── README.md
+
+├── scripts
+
+|  ├── generate-secrets.sh
+
+|  └── health-check.sh
+
+├── test-transactions.csv
+
+├── tsconfig.json
+
+└── turbo.json
+
 ## Creator
 FinSight was refined and deployed by Pratik Tanaji Parkale. 
 GitHub: https://github.com/pratikk70
